@@ -14,10 +14,11 @@ const player = new Player(iframe);
 player.on('timeupdate', Throttle(durationSaveToStorage, 1000));
 
 function newStart() {
-    if (!localStorage.getItem(timeKey)) { return }
-    const currentVideoTime = localStorage.getItem(timeKey)
+    const locStorTimeKey = localStorage.getItem(timeKey);
+    if (!locStorTimeKey) { return }
+    const currentVideoTime = locStorTimeKey;
     player.setCurrentTime(currentVideoTime)
-        .then(() => player.play())
+        // .then(() => ())
         .catch(function (error) {
         switch (error.name) {
             case 'RangeError':
