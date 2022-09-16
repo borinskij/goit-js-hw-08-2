@@ -24,10 +24,10 @@ function saveMessag() {
 function onFormSubmit(event){ 
     event.preventDefault(); 
     const {email, message}=event.currentTarget.elements 
-    console.dir({email: email.value, message:message.value}) 
-    event.currentTarget.reset();
+    console.dir({ email: email.value, message: message.value }) 
+    localStorage.removeItem(localKey)
 } 
- 
+
 function storageFromData(event){ 
     const formValue = {email:"", message:""}; 
  
